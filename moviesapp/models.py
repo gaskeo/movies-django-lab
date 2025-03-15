@@ -78,6 +78,10 @@ class Movie(models.Model):
     def get_review(self):
         return self.reviews_set.filter(parent__isnull=True)
 
+    class Meta:
+        verbose_name = "Фильм"
+        verbose_name_plural = "Фильмы"
+
 
 class MovieShots(models.Model):
     """ Кадры из фильма """
